@@ -1,0 +1,24 @@
+plugins {
+    id "java"
+    id "war"
+    id "org.teavm" version "0.10.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation teavm.libs.jsoApis
+}
+
+teavm {
+    // js {
+    //     addedToWebApp = true
+    //     mainClass = "net.kazuhiro1982.javado.teavm.EntryPoint"
+    // }
+    wasm {
+        addedToWebApp = true
+        mainClass = "net.kazuhiro1982.javado.teavm.EntryPoint"
+    }
+}
